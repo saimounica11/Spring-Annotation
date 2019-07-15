@@ -13,32 +13,22 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 
-public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
-    @PostConstruct
-    public void init()
-    {
-        System.out.println(nameOfBean+"  initialized");
-    }
-    @PreDestroy
-    public void destroy()
-    {
-        System.out.println(nameOfBean+" Destroyed");
-    }
+public class Movie {
+
 
 
 
     @Autowired
     Actor actor;
     @Value("${movie.name}")
-    String nameOfBean;
+    String movieName;
     private ApplicationContext applicationContext;
     public Movie(){}
     public void show(){
 
-        System.out.println("Movie ");
+        System.out.println("movie");
         actor.act();
     }
-
 
     public void setBeanName(String beanName) {
         System.out.println("Name of the bean is:-"+beanName);}

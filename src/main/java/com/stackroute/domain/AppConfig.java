@@ -8,24 +8,27 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 @PropertySource("classpath:/values.properties")
-public class AppConfig{
+public class AppConfig {
     @Bean
-    public BeanLifecycleDemo beanLifecycleDemo(){
-        return new BeanLifecycleDemo();
+    public BeanPostProcessorDemoBean beanPostProcessorDemoBean()
+    {
+        return new BeanPostProcessorDemoBean();
     }
-    @Bean(name = {"Allu","Prabhas"})
+
+
+    @Bean(name = {"Mahesh","Prabhas"})
     @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public Actor Allu()//Allu is the name of ID or object
+    public Actor Mahesh()
     {
         return new Actor();
-//        return actor;
+
 
     }
-    @Bean(name={"DJ","Arya"})
-    public Movie movieBean()//bean name is movieBean
+    @Bean(name={"Srimanthudu","Maharshi"})
+    public Movie movieBean()
     {
         Movie movie=new Movie();
-        //movie.setActor(Allu());
+
         return movie;
 
     }

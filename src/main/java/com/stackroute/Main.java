@@ -9,17 +9,15 @@ import org.springframework.context.support.AbstractApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        Object ob;
+
 
         AbstractApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
-        context.getBean("DJ", Movie.class).show();
+        context.getBean("Maharshi", Movie.class).show();
         context.getBean("Prabhas",Actor.class).act();
 
 
-        context.getBean("beanLifecycleDemo");
 
-
-        if(context.getBean("Prabhas",Actor.class)==context.getBean("Allu",Actor.class))
+        if(context.getBean("Prabhas",Actor.class)==context.getBean("Mahesh",Actor.class))
         {
             System.out.println("Equal");
         }
