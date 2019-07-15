@@ -12,14 +12,20 @@ import org.springframework.context.support.AbstractApplicationContext;
 public class Main {
     public static void main(String[] args) {
 
-        AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        AbstractApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
         context.getBean("Maharshi", Movie.class).show();
-        context.getBean("Prabhas", Actor.class).act();
+        context.getBean("Prabhas",Actor.class).act();
 
 
-        if (context.getBean("Prabhas", Actor.class) == context.getBean("Mahesh", Actor.class)) {
+
+
+
+        if(context.getBean("Prabhas",Actor.class)==context.getBean("MaheshG",Actor.class))
+        {
             System.out.println("Equal");
-        } else {
+        }
+        else
+        {
             System.out.println("not equal");
         }
 

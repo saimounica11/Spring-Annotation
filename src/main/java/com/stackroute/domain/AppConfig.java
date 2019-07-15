@@ -3,10 +3,13 @@ package com.stackroute.domain;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.*;
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.*;
+
 @Configuration
 @PropertySource("classpath:/values.properties")
 public class AppConfig {
-    @Bean(name = {"Mahesh","Prabhas"})
+    @Bean(name = {"MaheshG","Prabhas"})
     @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public Actor Mahesh()
     {
