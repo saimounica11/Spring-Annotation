@@ -9,8 +9,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 
 public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
+    @PostConstruct
+    public void init()
+    {
+        System.out.println(nameOfBean+"  initialized");
+    }
+    @PreDestroy
+    public void destroy()
+    {
+        System.out.println(nameOfBean+" Destroyed");
+    }
+
 
 
     @Autowired
@@ -21,9 +35,10 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
     public Movie(){}
     public void show(){
 
-        System.out.println("Its movie time");
+        System.out.println("Movie ");
         actor.act();
     }
+
 
     public void setBeanName(String beanName) {
         System.out.println("Name of the bean is:-"+beanName);}

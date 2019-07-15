@@ -24,5 +24,4 @@ public class Actor {
         System.out.println(this.name+" is acting");
     }
 
-
 }
